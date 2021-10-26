@@ -23,19 +23,31 @@ import (
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
+const (
+	PhasePending          = "PENDING"
+	PhaseRunning          = "RUNNING"
+	PhaseDone             = "DONE"
+	PhaseExceededDeadline = "EXCEEDED_DEADLINE"
+)
+
 // DeadlineJobSpec defines the desired state of DeadlineJob
 type DeadlineJobSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of DeadlineJob. Edit deadlinejob_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	JobStart string `json:"jobStart,omitempty"`
+
+	JobEnd string `json:"jobEnd,omitempty"`
+
+	Command string `json:"command,omitempty"`
 }
 
 // DeadlineJobStatus defines the observed state of DeadlineJob
 type DeadlineJobStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+
+	Phase string `json:"phase,omitempty"`
 }
 
 //+kubebuilder:object:root=true

@@ -3,5 +3,6 @@ kind: DeadlineJob
 metadata:
   name: deadlinejob-sample
 spec:
-  # Add fields here
-  foo: bar
+  jobStart: "2021-10-11T06:24:00Z"
+  jobEnd: "2021-10-11T12:43:20Z"
+  command: "sleep 120000"
