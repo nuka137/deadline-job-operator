@@ -1,0 +1,24 @@
+# permissions for end users to edit deadlinejobs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: deadlinejob-editor-role
+rules:
+- apiGroups:
+  - job.nuka137.com
+  resources:
+  - deadlinejobs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - job.nuka137.com
+  resources:
+  - deadlinejobs/status
+  verbs:
+  - get
