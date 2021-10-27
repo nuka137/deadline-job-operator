@@ -36,7 +36,7 @@ $ kubectl get deadlinejobs.job.nuka137.com
 NAME                 AGE
 deadlinejob-sample   80s
 
-$ kubectl describe 
+$ kubectl describe deadlinejobs.job.nuka137.com deadlinejob-sample
 Name:         deadlinejob-sample
 Namespace:    default
 Labels:       <none>
